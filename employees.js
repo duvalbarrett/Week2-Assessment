@@ -70,8 +70,9 @@ empOne.getSchedule()
 
 //CODE HERE
 
-let empTwo = {...empOne}['Nick']
+let empTwo = {...empOne}
 
+empTwo.name = 'Nick'
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -112,7 +113,6 @@ getEmployees(){
 }
 
 addEmployee(emp){
-    let emp = 'Josh'
     this.employees.push(emp)
 
 }
@@ -131,7 +131,7 @@ addEmployee(emp){
 
 //CODE HERE
 
-const manager = new Manager('Winston', 'weekday mornings', 'Brandon')
+const manager = new Manager('Winston', ['weekday mornings', 'weekday afternoons'], ['Brandon', 'George'])
 
 
 /*
@@ -141,7 +141,7 @@ const manager = new Manager('Winston', 'weekday mornings', 'Brandon')
 
 //CODE HERE
 
-console.log(manager.getEmployees())
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -151,7 +151,7 @@ console.log(manager.getEmployees())
 
 //CODE HERE 
 
-console.log(manager.addEmployee('Coach'))
+manager.addEmployee('Coach')
 
 /*
     Call the `getEmployees` method on the
@@ -161,4 +161,4 @@ console.log(manager.addEmployee('Coach'))
 
 //CODE HERE
 
-console.log(manager.getEmployees())
+manager.getEmployees()

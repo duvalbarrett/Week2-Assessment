@@ -52,9 +52,9 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
-const canWeDeliver = (zipCode) => {
+const canWeDeliver = (zipcode) => {
     for(let i = 0; i < deliveryAreaZipCodes.length; i++){
-        if(deliveryAreaZipCodes[i] === deliveryAreaZipCodes){
+        if(deliveryAreaZipCodes[i] == zipcode){
             console.log(`You're in our delivery zone!`)
         }else{
             console.log(`Sorry, we can't deliver to that address`)
@@ -83,8 +83,8 @@ console.log(canWeDeliver(850002))
 
 // CODE HERE
 
-const canWeDeliverTwo = (zipCode) => {
-    if (deliveryAreaZipCodes.includes(85205, 85204, 85203, 85213, 85206)){
+const canWeDeliverTwo = (zipcode) => {
+    if (deliveryAreaZipCodes.includes(zipcode)){
     console.log(`You're in our delivery zone!`)
 }else{
     console.log(`Sorry, we can't deliver to that address`)
@@ -130,9 +130,9 @@ const deals = [
 
 //CODE HERE
 
-const fifteenPercentOff = deals.replace('15% Off!', '10% Off!')
+deals[0].title = deals[0].title.replace('15', '10')
 
-console.log(fifteenPercentOff)
+console.log(deals)
 
 
 
@@ -151,6 +151,6 @@ console.log(fifteenPercentOff)
 
 //CODE HERE
 
-const tenPercentOff = deals.replace('March', 'April').trim()}
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
 
-console.log(tenPercentOff)
+console.log(deals)

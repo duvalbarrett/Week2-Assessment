@@ -77,9 +77,9 @@ console.log(pizza.tags[1])
 
 //CODE HERE
 
-const {price} = newPrice
+const {price} = pizza
 
-console.log(newPrice)
+console.log(pizza)
 
 /*
     Fourth, and last, destructure the category
@@ -90,7 +90,7 @@ console.log(newPrice)
 
 //CODE HERE
 
-const {category} = newCategory
+const {category} = pizza
 
 console.log(newCategory)
 
@@ -108,8 +108,48 @@ console.log(newCategory)
 
 //CODE HERE
 
-let foodArr = ['pizza', 22, 'entree', 60, ['adults, keto-diet', 'no carbs']]
-
+let foodArr = [
+{
+name: 'Pepperoni',
+price: 14,
+category: 'Appetizer',
+popularity: 10,
+rating: 10,
+tags: ['meat', 'Gluten-free', 'low carbs']
+},
+{
+name: 'cheese',
+price: 6,
+category: 'Appetizer',
+popularity: 100,
+rating: 88,
+tags: ['adults', 'keto-diet', 'low carbs']
+},
+{
+name: 'sausage',
+price: 3,
+category: 'entree',
+popularity: 33,
+    rating: 8,
+    tags: ['diet', 'fruits', 'no carbs']
+},
+{
+name: 'Pineapple',
+price: 12,
+category: 'Appetizer',
+popularity: 22,
+rating: 4,
+tags: ['fruit', 'sweet', 'sugar']
+},
+{
+name: 'artichoke',
+price: 5,
+category: 'entree',
+popularity: 13,
+rating: 8,
+tags: ['Kids', 'Gluten-free', 'low carbs']
+}
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -127,9 +167,7 @@ let foodArr = ['pizza', 22, 'entree', 60, ['adults, keto-diet', 'no carbs']]
 //CODE HERE
 
 const filteredFood = foodArr.filter(function(element, index, wholeArray){
-    if (foodArr % 2 === 0){
-    callback(foodArr)
-    }
+    return pizzaObj.tags.includes('poultry')
 })
 
 
@@ -176,21 +214,17 @@ const filteredFood = foodArr.filter(function(element, index, wholeArray){
 //CODE HERE
 
 const filterByProperty = (property, number, type) => {
-    property = 75;    // price
-    number = 44;
-    type = 'above';
+    const filteredArr = foodArr.filter(pizza => {
+        if(type === 'above'){
+            return [pizza.property] > number 
+        }else if(type === 'below'){
+            return [pizza.property] < number
+        }
+        })
+    return filteredArr
 }
 
-let filterArray = []
 
-foodArr.filter(function(element,index, wholeArray){
-    if (element < number){
-        console.log(number)
-    }else if
-        (element > number){
-            console.log(element)
-        }
-    },
 
 
 /*
@@ -202,4 +236,5 @@ foodArr.filter(function(element,index, wholeArray){
 
 //CODE HERE
 
-console.log(filterByProperty(75, 44,'below')))
+console.log(filterByProperty('price', 6,'above'))
+

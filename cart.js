@@ -35,10 +35,12 @@ const cart = [
 
 //CODE HERE
 
-const summedPrice = cart.reduce(function(price,acc,curr, wholeArray){
-    return console.log(price + curr)
-})
+const summedPrice = cart.reduce(acc,ord => {
+    return acc + ord.price
+}, 0)
 
+
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -58,9 +60,10 @@ const summedPrice = cart.reduce(function(price,acc,curr, wholeArray){
 
 //CODE HERE
 
-const calcFinalPrice = (carTotal, couponValue, tax) => {
-    return (carTotal + 0.06) - couponValue 
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return (cartTotal * 1 + tax) - couponValue 
 }
+
 
 
 
@@ -87,7 +90,18 @@ const calcFinalPrice = (carTotal, couponValue, tax) => {
 /*
     TEXT ANSWER HERE
 
-Cart = ['Name', 'Address', 'Email', 'Phone number', 'Credit card', 'Order Information]
+Cart = 
+
+name string
+phone number string 
+email string
+address string
+hasCreditCard boolean
+regularCustomer boolean
+discount array
+notes string
+allergies array
+
 I chose these properties because as a restaurant you need to know who is ordering which order, so you need their name, if its takeout you would need
 their address and phone number in case their is trouble finding the house and email to confirm their order. 
 */
@@ -99,16 +113,23 @@ their address and phone number in case their is trouble finding the house and em
 
 //CODE HERE
 
-const Cart = {
+const customer = {
+
 Name: 'Joe Turner',
 
 Address: '180 Landing Ave',
 
 Email: 'joet@aol.com',
 
-Phone: 918-222-2233,
+Phone: '918-222-2233',
 
-Credit: 400303030292,
+hasCreditCard: true,
 
-Order: 'Fried chicken wings'
+Order: 'Fried chicken wings',
+
+Notes: 'Cool guy',
+
+Allergies: ['gluten', 'seafood'],
+
+regularCustomer: true
 }
